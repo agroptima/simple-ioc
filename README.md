@@ -1,6 +1,6 @@
 # Simple IoC
 
-[![Build Status](https://travis-ci.org/agroptima/simple-ioc.png)](https://travis-ci.org/agroptima/simple-ioc)
+[![Build Status](https://travis-ci.org/agroptima/simple-ioc.svg)](https://travis-ci.org/agroptima/simple-ioc)
 [![License GPLv3](https://img.shields.io/badge/license-GPLv3-red.svg)](https://opensource.org/licenses/GPL-3.0)
 ![Python versions](https://img.shields.io/badge/python-2.7-blue.svg)
 

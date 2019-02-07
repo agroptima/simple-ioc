@@ -29,6 +29,14 @@ with description('Container') as self:
 
         expect(self.container.get('a_service')).to(be_a(Service))
 
+    with it('singletonizes services'):
+        self.container.register('singletonized_service', lambda: Service())
+
+        first_instance = self.container.get('singletonized_service')
+        second_instance = self.container.get('singletonized_service')
+
+        expect(first_instance).to(be(second_instance))
+
     with it('disallows registering the same service twice'):
         self.container.register('reserved_identifier', lambda: Service())
 

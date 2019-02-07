@@ -15,18 +15,26 @@ class Container(object):
     __metaclass__ = _Singleton
 
     def __init__(self):
-        self.__services = {}
+        self.__locators = {}
+        self.__instances = {}
 
     def register(self, identifier, callable):
         if self.__has(identifier):
             raise ContainerException('Identifier already registered: {}'.format(identifier))
 
-        self.__services[identifier] = callable
+        self.__locators[identifier] = callable
 
     def get(self, identifier):
         if not self.__has(identifier):
             raise ContainerException('Identifier not registered: {}'.format(identifier))
-        return self.__services[identifier]()
+
+        return self.__instance_of(identifier)
 
     def __has(self, identifier):
-        return identifier in self.__services
+        return identifier in self.__locators
+
+    def __instance_of(self, identifier):
+        if identifier not in self.__instances:
+            self.__instances[identifier] = self.__locators[identifier]()
+
+        return self.__instances[identifier]

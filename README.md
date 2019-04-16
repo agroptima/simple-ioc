@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/agroptima/simple-ioc.svg)](https://travis-ci.org/agroptima/simple-ioc)
 [![License GPLv3](https://img.shields.io/badge/license-GPLv3-red.svg)](https://opensource.org/licenses/GPL-3.0)
-![Python versions](https://img.shields.io/badge/python-2.7-blue.svg)
+![Python versions](https://img.shields.io/badge/python-3.x-blue.svg)
 
 ## Install
 
@@ -23,7 +23,7 @@ In order to have the IoC (Inversion of Control) working in your application, you
 ```python
 from simple_ioc import Container
 
-class AService(object):
+class AService:
     # Your service implementation comes here
 
 Container().register('an_identifier', lambda: AService())

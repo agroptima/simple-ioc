@@ -4,7 +4,7 @@ from .container import (
 )
 
 
-VERSION = (2, 0, 0, 'final')
+VERSION = (3, 0, 0, 'final')
 __version__ = VERSION
 
 

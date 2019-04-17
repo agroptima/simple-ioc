@@ -11,9 +11,7 @@ class _Singleton(type):
         return cls._instances[cls]
 
 
-class Container(object):
-    __metaclass__ = _Singleton
-
+class Container(object, metaclass=_Singleton):
     def __init__(self):
         self.__locators = {}
         self.__instances = {}

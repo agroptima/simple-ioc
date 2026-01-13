@@ -6,14 +6,14 @@
 
 ## Install
 
-```
-$ pipenv install simple-ioc
+```sh
+pipenv install simple-ioc
 ```
 
 or
 
-```
-$ pip install simple-ioc
+```sh
+pip install simple-ioc
 ```
 
 ## Usage
@@ -34,3 +34,62 @@ Then, from any point in your application, you can retrieve the service by callin
 ```python
 a_service = Container().get('an_identifier')
 ```
+
+## Publishing to PyPI
+
+Follow these steps to publish a new version of the package to PyPI:
+
+1. **Update the version number** in `setup.py`
+
+2. **Install build tools** (if not already installed):
+
+   ```sh
+   pip install build twine
+   ```
+
+3. **Build the distribution packages**:
+
+   ```sh
+   python -m build
+   ```
+
+   This creates both source distribution (.tar.gz) and wheel (.whl) in the `dist/` directory.
+
+4. **Verify the build**:
+
+   ```sh
+   twine check dist/*
+   ```
+
+5. **Upload to PyPI** using twine:
+
+   ```sh
+   twine upload dist/*
+   ```
+
+   **Note**: Use an API token instead of username/password. Configure it in `~/.pypirc`:
+
+   ```ini
+   [pypi]
+   username = __token__
+   password = pypi-YOUR-API-TOKEN-HERE
+   ```
+
+6. **Clean up** the build artifacts (optional):
+
+   ```sh
+   rm -rf build/ dist/ *.egg-info/
+   ```
+
+### Best Practices
+
+- **Use version tags**: After publishing, tag the release in git:
+
+  ```sh
+  git tag -a vX.Y.Z -m "Release vX.Y.Z"
+  git push origin --tags
+  ```
+
+### Prerequisites
+
+- You need a PyPI account with the appropriate permissions to upload this package

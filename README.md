@@ -50,7 +50,7 @@ Follow these steps to publish a new version of the package to PyPI:
 3. **Build the distribution packages**:
 
    ```sh
-   python -m build
+   python setup.py sdist
    ```
 
    This creates both source distribution (.tar.gz) and wheel (.whl) in the `dist/` directory.
@@ -86,7 +86,7 @@ Follow these steps to publish a new version of the package to PyPI:
 - **Use version tags**: After publishing, tag the release in git:
 
   ```sh
-  git tag -a vX.Y.Z -m "Release vX.Y.Z"
+  git tag -a X.Y.Z -m "Release X.Y.Z"
   git push origin --tags
   ```
 

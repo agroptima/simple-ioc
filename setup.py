@@ -1,10 +1,9 @@
 from setuptools import setup
 
-from simple_ioc import get_version
 
 setup(
     name="simple-ioc",
-    version=get_version(),
+    version="3.1.0",
     license="GPLv3",
     author="Isagri S.L.U.",
     author_email="devs.es@groupeisagri.com",

@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="simple-ioc",
-    version="3.1.0",
+    version="3.2.0",
     license="GPLv3",
     author="Isagri S.L.U.",
     author_email="devs.es@groupeisagri.com",
